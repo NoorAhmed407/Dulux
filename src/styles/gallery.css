@@ -1,0 +1,18 @@
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+
+.gallery{
+        background-image: url("./../image/gallery.jpg");
+        height: 55vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+        font-family: 'Courier New', Courier, monospace;     
+}
