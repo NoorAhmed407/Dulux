@@ -50,7 +50,7 @@ render() {
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>
-            <MDBNavItem className="black-text">
+            <MDBNavItem className="black-text text-center">
                 <a className="p-3" to="#"><MDBIcon className="grow" icon="search" size="lg"/></a> 
                 <a className="p-3" to="#"><MDBIcon className="grow" icon="list" size="lg"/></a> 
                 <a  className="p-3 " to="#"><MDBIcon className="grow" icon="user-plus" size="lg"/></a> 

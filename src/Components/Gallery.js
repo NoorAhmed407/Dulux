@@ -14,12 +14,12 @@ class Gallery extends Component{
     
     render(){
         return(
-            <div class="gallery text-center">
+            <div className="gallery text-center">
                 <div className="container">
                     <h1 
                     data-aos="zoom-in"
                     data-aos-duration="1000"
-                    class="text-white font-weight-bold p-3"
+                    className="text-white font-weight-bold p-3"
                      >{this.state.heading}</h1>
                     <button
                     data-aos="fade-up" 
