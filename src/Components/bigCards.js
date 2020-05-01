@@ -5,8 +5,6 @@ import BG3 from './../image/bigcard3.jpg';
 import BG4 from './../image/bigcard4.jpg';
 
 
-
-
 const BigCard =(props) =>{
 
         const styles = {
@@ -34,6 +32,40 @@ const BigCard =(props) =>{
                 </div>
         </div>
     );
+}
+
+
+const FullCard = (props) =>{
+    
+    const styles = {
+        bgStyle: {
+            backgroundImage: `url(${props.bigbg})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                height: "400px",
+                position: "relative"
+        },
+        smalldiv: {
+            position: "absolute",
+            bottom: 0,
+            borderRadius: "2px 15px" 
+
+        }
+    };
+
+    return(
+        <div 
+        style={styles.bgStyle}
+        className="mt-5">
+                <div
+                 className="bg-white mb-4 ml-3 d-inline-block" 
+                 style={styles.smalldiv}>
+                     Hello
+                </div>
+
+        </div>
+    );
+    
 }
 
 class BigSection extends Component{
@@ -86,7 +118,7 @@ class BigSection extends Component{
                 style={{width: "90%"}}>
 
                     {this.getCards()}
-                    
+                    <FullCard bigbg={BG1} />
                 </div>
 
             </div>
