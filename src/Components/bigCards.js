@@ -3,6 +3,10 @@ import BG1 from './../image/bigcard1.jpg';
 import BG2 from './../image/bigcard2.jpg';
 import BG3 from './../image/bigcard3.jpg';
 import BG4 from './../image/bigcard4.jpg';
+import FC1 from './../image/fullcard.jpg';
+import FC2 from './../image/fullcard2.jpg';
+import FC3 from './../image/fullcard3.jpg';
+import FC4 from './../image/fullcard4.jpg';
 
 
 const BigCard =(props) =>{
@@ -42,14 +46,13 @@ const FullCard = (props) =>{
             backgroundImage: `url(${props.bigbg})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
-                height: "400px",
+                height: "500px",
                 position: "relative"
         },
         smalldiv: {
-            position: "absolute",
-            bottom: 0,
-            borderRadius: "2px 15px" 
-
+                position: "absolute",
+                bottom: 0,
+                borderRadius: "2px 15px" 
         }
     };
 
@@ -58,9 +61,12 @@ const FullCard = (props) =>{
         style={styles.bgStyle}
         className="mt-5">
                 <div
-                 className="bg-white mb-4 ml-3 d-inline-block" 
+                 className={`${props.divcolor} text-${props.textColor}  m-3 p-3 d-inline-block`} 
                  style={styles.smalldiv}>
-                     Hello
+                     <p>{props.smallpara}</p>
+                     <h5>{props.ttlhead}</h5>
+                     <p>{props.largepara}</p>
+                     <button className={`btn mt-2 btn-${props.btnstyle}`}>{props.btntext}</button>
                 </div>
 
         </div>
@@ -95,6 +101,59 @@ class BigSection extends Component{
                 paragraph: "The easiest way to turn your decorating dreams into a reality.",
                 bg: BG4
             },
+        ],
+
+        fullCardData: [
+            {
+                id: 1,
+                bg: FC1,
+                para1: "Partnership with new Velvet Touch",
+                para2: "Giving Cafe Zouk a completely new look using Dulux super-premium Velvet Touch paint.",
+                title: "Dulux celebrates Café Zouk",
+                btnText: "See More",
+                bgcolor: "white",
+                textcolor: "dark",
+                btnclss: "success"
+            },
+
+            
+            {
+                id: 2,
+                bg: FC2,
+                para1: "Magic Made Easy",
+                para2: "Explore 8 unique and inspirational collections for your child's room.",
+                title: "Dulux Far Away Places",
+                btnText: "Shop Now",
+                bgcolor: "deep-purple darken-4",
+                textcolor: "white",
+                btnclss: "primary"
+            },
+
+            
+            {
+                id: 3,
+                bg: FC3,
+                para1: "Magic Made Easy",
+                para2: "Explore 8 unique and inspirational collections for your child's room.",
+                title: "Dulux Far Away Places",
+                btnText: "Learn how & get Inspired",
+                bgcolor: "white",
+                textcolor: "dark",
+                btnclss: "success"
+            },
+
+             
+            {
+                id: 4,
+                bg: FC4,
+                para1: "Magic Made Easy",
+                para2: "Explore 8 unique and inspirational collections for your child's room.",
+                title: "Dulux Far Away Places",
+                btnText: "Shop Now",
+                bgcolor: "deep-purple darken-4",
+                textcolor: "white",
+                btnclss: "primary"
+            }
         ]
     }
 
@@ -110,15 +169,34 @@ class BigSection extends Component{
              return getcards;
         }
 
+        getFullCards = () =>{
+            const getfullcards = this.state.fullCardData.map(data=>
+                <FullCard
+                    key={data.id}
+                    smallpara={data.para1}
+                    largepara={data.para2}
+                    ttlhead={data.title}
+                    bigbg={data.bg}
+                    btntext={data.btnText}
+                    btnstyle={data.btnclss}
+                    divcolor={data.bgcolor}
+                    textColor={data.textcolor}
+                />
+
+            );
+
+            return getfullcards;
+
+        }
+
     render(){
         return(
             <div className="jumbotron grey lighten-5">
                 <div 
                 className="mx-auto"
                 style={{width: "90%"}}>
-
                     {this.getCards()}
-                    <FullCard bigbg={BG1} />
+                    {this.getFullCards()}
                 </div>
 
             </div>
