@@ -7,7 +7,9 @@ import FC1 from './../image/fullcard.jpg';
 import FC2 from './../image/fullcard2.jpg';
 import FC3 from './../image/fullcard3.jpg';
 import FC4 from './../image/fullcard4.jpg';
-
+import AOS from 'aos';
+import './../../node_modules/aos/dist/aos.css';
+import { MDBIcon } from 'mdbreact';
 
 const BigCard =(props) =>{
 
@@ -27,7 +29,8 @@ const BigCard =(props) =>{
                 <div 
                 style={styles.imgStyle} 
                 className="col-md-6"></div>
-                <div className="col-md-6 mt-5 mb-5">
+                <div 
+                className="col-md-6 mt-5 mb-5">
                     <h3>{props.heading}</h3>
                     <p>{props.para}</p>
                     <button
@@ -52,7 +55,7 @@ const FullCard = (props) =>{
         smalldiv: {
                 position: "absolute",
                 bottom: 0,
-                borderRadius: "2px 15px" 
+                borderRadius: "0px 40px" 
         }
     };
 
@@ -157,6 +160,7 @@ class BigSection extends Component{
         ]
     }
 
+        
 
         getCards =() =>{
             const getcards = this.state.cardData.map(data=>
@@ -197,6 +201,12 @@ class BigSection extends Component{
                 style={{width: "90%"}}>
                     {this.getCards()}
                     {this.getFullCards()}
+                    <div className="text-center mt-5" >
+                        <h4 className="text-dark font-weight-bold">Add some colour to your feed</h4>
+                           <a href="!#"><MDBIcon className="p-2" fab icon="facebook-square" size="2x" /> </a>
+                           <a href="!#"><MDBIcon className="p-2 red-text" fab icon="instagram" size="2x" /> </a>
+                           <a href="!#"><MDBIcon className="p-2 red-text" fab icon="youtube" size="2x" /> </a>
+                    </div>
                 </div>
 
             </div>

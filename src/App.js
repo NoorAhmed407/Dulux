@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Gallery from './Components/Gallery';
 import Cards from './Components/cards';
 import BigSection from './Components/bigCards';
+import Footer from './Components/footer';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Gallery />
       <Cards />
       <BigSection />
+      <Footer />
 
     </div>
   );

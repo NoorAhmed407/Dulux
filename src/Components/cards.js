@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './../styles/cardstyle.css';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { MDBIcon} from 'mdbreact';
 
 const Card = (props) => {
 
   
-AOS.init();
+AOS.init()
 
   return (
     <div className="col-md-3">
