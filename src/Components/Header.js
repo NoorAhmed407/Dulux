@@ -4,7 +4,7 @@ MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggle
 } from "mdbreact";
 import Logo from "./../image/dulux.jpg";
 import "./../styles/header.css";
-import { BrowserRouter as Router } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
 state = {
@@ -17,7 +17,7 @@ toggleCollapse = () => {
 
 render() {
   return (
-    <Router>
+    <div>
       <div style={{height: 10}} className=" deep-orange darken-4" ></div>
       <MDBNavbar  color="white" dark expand="md">
         <div className="container">
@@ -51,15 +51,15 @@ render() {
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem className="black-text text-center">
-                <a className="p-3" to="#"><MDBIcon className="grow" icon="search" size="lg"/></a> 
-                <a className="p-3" to="#"><MDBIcon className="grow" icon="list" size="lg"/></a> 
-                <a  className="p-3 " to="#"><MDBIcon className="grow" icon="user-plus" size="lg"/></a> 
+                <Link className="p-3" to="/"><MDBIcon className="grow" icon="search" size="lg"/></Link> 
+                <Link className="p-3" to="/cards"><MDBIcon className="grow" icon="list" size="lg"/></Link> 
+                <Link  className="p-3 " to="/bigcards"><MDBIcon className="grow" icon="user-plus" size="lg"/></Link> 
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
         </div>
       </MDBNavbar>
-    </Router>
+      </div>
     );
   }
 }

@@ -7,8 +7,6 @@ import FC1 from './../image/fullcard.jpg';
 import FC2 from './../image/fullcard2.jpg';
 import FC3 from './../image/fullcard3.jpg';
 import FC4 from './../image/fullcard4.jpg';
-import AOS from 'aos';
-import './../../node_modules/aos/dist/aos.css';
 import { MDBIcon } from 'mdbreact';
 
 const BigCard =(props) =>{
@@ -190,7 +188,6 @@ class BigSection extends Component{
             );
 
             return getfullcards;
-
         }
 
     render(){
